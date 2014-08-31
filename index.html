@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Canadian-maps-esri by ericpanorel</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Canadian-maps-esri</h1>
+        <h2>Canadian Basemaps from NRCAN using ESRI Javascript API</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/ericpanorel/canadian-maps-esri/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ericpanorel/canadian-maps-esri/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ericpanorel/canadian-maps-esri" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>Canadian Base Maps using ESRI Javascript API (<a href="https://developers.arcgis.com/javascript/jsapi/">https://developers.arcgis.com/javascript/jsapi/</a>), with information from here : <a href="http://geogratis.gc.ca/geogratis/DevCorner">http://geogratis.gc.ca/geogratis/DevCorner</a>
+Built using (barely) Google Web Starter Kit tooling (<a href="https://developers.google.com/web/starter-kit/">https://developers.google.com/web/starter-kit/</a>)</p>
+
+<h1>
+<a name="indexhtml" class="anchor" href="#indexhtml"><span class="octicon octicon-link"></span></a>index.html</h1>
+
+<p>Basemap = Geometry Only, Cached, Web Mercator: <a href="http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT_CBCT_GEOM_3857/MapServer">http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT_CBCT_GEOM_3857/MapServer</a>
+Text Overlay = English Text Only, Cached, Web Mercator: <a href="http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT_TXT_3857/MapServer">http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT_TXT_3857/MapServer</a>
+Hill Shader = Hillshade, Cached, LCC: <a href="http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer">http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer</a></p>
+
+<p>Since the hill shader (EPSG:3978) is a different projection compared to the basemap (web mercator) so some trickery has to be performed by
+implementing a sublass of esri.layers.DynamicMapServiceLayer</p>
+
+<h1>
+<a name="lcchtml" class="anchor" href="#lcchtml"><span class="octicon octicon-link"></span></a>lcc.html</h1>
+
+<p>Lambert Conformal Conic projection (EPSG:3978) </p>
+
+<p>Basemap = English Combined, Cached, LCC: <a href="http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer">http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer</a>
+Hill Shader = Hillshade, Cached, LCC: <a href="http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer">http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer</a></p>
+
+<p>Much simpler, but the locate button didn't work perfectly until adding using <i>GeometryService</i></p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Apache 2.0  </p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
