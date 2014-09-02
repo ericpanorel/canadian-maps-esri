@@ -102,7 +102,7 @@
 	  layerInfos: [layer1]
 	};	
 	
-	var wmsLayer = new WMSLayer("http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en", {
+	var wmsLayer = new WMSLayer("http://wms.ess-ws.nrcan.gc.ca/wms/toporama_fr", {
 	format: "png",
 	transparent: true,
 	resourceInfo: resourceInfo,
@@ -119,8 +119,8 @@
 
 	
 	
-	//var gsvc = new GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
-	var gsvc = new GeometryService(location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+	var gsvc = new GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+	//var gsvc = new GeometryService(location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
 	esriConfig.defaults.geometryService = gsvc; // important for LocateButton to work, if at 3978 projection
 	var outSR = new SpatialReference({ wkid:3978});
 	
