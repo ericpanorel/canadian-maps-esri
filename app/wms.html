@@ -87,6 +87,12 @@
   	map = new Map("map", {
   		});
 
+    var shader = new Tiled("http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer", {
+	id: "shader",
+	opacity:0.25
+	});
+  	map.addLayer(shader);
+		
 
 	var layer1 = new WMSLayerInfo({name:"wms-toporama",title:"WMS-Toporama"});
 	var resourceInfo = {
@@ -98,26 +104,23 @@
 	
 	var wmsLayer = new WMSLayer("http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en", {
 	format: "png",
-	transparent: false,
+	transparent: true,
 	resourceInfo: resourceInfo,
-	visibleLayers: ['wms-toporama']
-	
+	visibleLayers: ['wms-toporama'],
+	id:'base',
+	opacity:0.75
    });
     map.addLayer(wmsLayer);
 	
-  	var shader = new Tiled("http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer", {
-	id: "shader",
-	opacity: 0.25
-	});
-  	map.addLayer(shader);
+
 
 	// calgary
 	var point = new Point([-114.066667,51.05],new SpatialReference({ wkid:4326 }));
 
 	
 	
-	var gsvc = new GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
-	//var gsvc = new GeometryService(location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+	//var gsvc = new GeometryService("http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+	var gsvc = new GeometryService(location.protocol + "//utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
 	esriConfig.defaults.geometryService = gsvc; // important for LocateButton to work, if at 3978 projection
 	var outSR = new SpatialReference({ wkid:3978});
 	
