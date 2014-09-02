@@ -25,6 +25,18 @@ Hill Shader = Hillshade, Cached, LCC: http://geoappext.nrcan.gc.ca/arcgis/rest/s
 
 Much simpler, but the locate button didn't work perfectly until adding using <i>GeometryService</i>
 
+### <a href='http://ericpanorel.github.io/canadian-maps-esri/wms.html' target='_blank'>wms.html</a>
+Lambert Conformal Conic projection (EPSG:3978) 
+
+Basemap = WMS: http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en or http://wms.ess-ws.nrcan.gc.ca/wms/toporama_fr
+
+Hill Shader = Hillshade, Cached, LCC: http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer
+
+Using WMS as a base layer
+
+Much simpler, but the locate button didn't work perfectly until adding using <i>GeometryService</i>
+
+
 ## License
 
 Apache 2.0  
