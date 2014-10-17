@@ -36,6 +36,14 @@ Using WMS as a base layer
 
 Much simpler, but the locate button didn't work perfectly until adding using <i>GeometryService</i>
 
+### <a href='http://ericpanorel.github.io/canadian-maps-esri/lcc-leaflet.html' target='_blank'>lcc-leaflet.html</a>
+Lambert Conformal Conic projection (EPSG:3978) 
+
+Basemap = English Combined, Cached, LCC: http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer
+
+Hill Shader = Hillshade, Cached, LCC: http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer
+
+Using leafletJS mapping engine
 
 ## License
 
