@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.1/esri-leaflet.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.0.0/proj4.js"></script>
+    <script src="scripts/proj4leaflet.js"></script>
+    <div id="map">
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+
+        // create new Proj4Leaflet CRS
+        // view the config here: http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBCT3978/MapServer
+        // CRS settings: http://epsg.io/3978
+        var crs = new L.Proj.CRS('EPSG:3978', '+proj=lcc +lat_1=49 +lat_2=77 +lat_0=49 +lon_0=-95 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs', {
+            transformation: new L.Transformation(1, 34655800, -1, 39310000),
+            resolutions: [
+              38364.660062653464,
+              22489.62831258996,
+              13229.193125052918,
+              7937.5158750317505,
+              4630.2175937685215,
+              2645.8386250105837,
+              1587.5031750063501,
+              926.0435187537042, //level 7
+              529.1677250021168,
+              317.50063500127004,
+              185.20870375074085,
+              111.12522225044451,
+              66.1459656252646,
+              38.36466006265346,
+              22.48962831258996,
+              13.229193125052918,
+              7.9375158750317505,
+              4.6302175937685215
+            ]
+        });
+
+        // pass crs into map constructor
+        var map = new L.Map('map', {
+            crs: crs
+        }).setView([51.05, -114.066667], 11); // Calgary, doh!
+
+        L.esri.tiledMapLayer('http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer', {
+            maxZoom: 17,
+            minZoom: 0,
+            continuousWorld: true,
+            detectRetina: true,
+            attribution: 'Natural Resources Canada'
+        }).addTo(map);
+
+        L.esri.tiledMapLayer('http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBME_CBCE_HS_RO_3978/MapServer', {
+            opacity: 0.25,
+            detectRetina: true,
+            id: "shader"
+        }).addTo(map);
+
+
+
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Built with love using Web Starter Kit -->
+</body>
+</html>
