@@ -1,0 +1,13 @@
+{
+  "name": "L.Control.Locate",
+  "_cacheHeaders": {
+    "ETag": "\"e0a3e50afc3bc7f4af998fba0ead1a333710d86e\"",
+    "Content-Type": "application/javascript; charset=utf-8"
+  },
+  "_release": "e-tag:e0a3e50af",
+  "main": "L.Control.Locate.js",
+  "_source": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.js",
+  "_target": "*",
+  "_originalSource": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.js",
+  "_direct": true
+}

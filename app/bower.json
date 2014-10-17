@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ericpanorel/canadian-maps-esri",
+  "authors": [
+    "ericpanorel <ericpanorel@aglux.ca>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "proj4leaflet": "https://raw.githubusercontent.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js",
+    "locatecss": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.css",
+    "locateiecss": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.ie.css",
+    "locatejs": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.js"
+  }
+}

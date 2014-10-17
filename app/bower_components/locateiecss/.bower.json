@@ -1,0 +1,13 @@
+{
+  "name": "L.Control.Locate.ie",
+  "_cacheHeaders": {
+    "ETag": "\"ef7f624244b36c3ac82473845c65c625757d1526\"",
+    "Content-Type": "text/css; charset=utf-8"
+  },
+  "_release": "e-tag:ef7f62424",
+  "main": "L.Control.Locate.ie.css",
+  "_source": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.ie.css",
+  "_target": "*",
+  "_originalSource": "http://rawgithub.com/domoritz/leaflet-locatecontrol/gh-pages/src/L.Control.Locate.ie.css",
+  "_direct": true
+}

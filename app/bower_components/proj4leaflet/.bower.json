@@ -1,0 +1,14 @@
+{
+  "name": "proj4leaflet",
+  "_cacheHeaders": {
+    "ETag": "\"ecdea63f8f0d200ed209be9486b67f61b76ac4b8\"",
+    "Content-Length": "11088",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:ecdea63f8",
+  "main": "proj4leaflet.js",
+  "_source": "https://raw.githubusercontent.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/kartena/Proj4Leaflet/master/src/proj4leaflet.js",
+  "_direct": true
+}

@@ -11,6 +11,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
+	
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -27,8 +28,17 @@
     -->
     <!-- Load Leaflet from CDN-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="bower_components/locatecss/L.Control.Locate.css" />
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="bower_components/locateiecss/L.Control.Locate.ie.css"/>
+	<![endif]-->
+	
+	
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
+	<script src="bower_components/locatejs/L.Control.Locate.js" ></script>
+	
     <!-- Load Esri Leaflet from CDN -->
     <script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.1/esri-leaflet.js"></script>
 
@@ -50,7 +60,7 @@
 </head>
 <body>
     <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.0.0/proj4.js"></script>
-    <script src="scripts/proj4leaflet.js"></script>
+    <script src="bower_components/proj4leaflet/proj4leaflet.js"></script>
     <div id="map">
 
     </div>
@@ -110,7 +120,8 @@
             id: "shader"
         }).addTo(map);
 
-
+		// create control and add to map
+		L.control.locate().addTo(map);
 
     </script>
 
