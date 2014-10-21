@@ -46,6 +46,7 @@ Hill Shader = Hillshade, Cached, LCC: http://geoappext.nrcan.gc.ca/arcgis/rest/s
 Using leafletJS mapping engine
 
 ### <a href='http://ericpanorel.github.io/canadian-maps-esri/google.html' target='_blank'>google.html</a>
+
 Web Mercator (EPSG:3857) 
 
 Basemap = English Combined, Cached, Web Mercator: http://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT_CBCT_GEOM_3857/MapServer
